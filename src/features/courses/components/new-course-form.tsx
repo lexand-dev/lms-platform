@@ -52,7 +52,7 @@ export const NewCourseForm = () => {
           control={form.control}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Course Title</FormLabel>
               <FormControl>
                 <Input
                   placeholder="e.g. 'Advanced web development'"
@@ -67,7 +67,7 @@ export const NewCourseForm = () => {
             </FormItem>
           )}
         />
-        <div>
+        <div className="flex gap-x-2">
           <Link href="/">
             <Button type="button" variant="ghost">
               Cancel
