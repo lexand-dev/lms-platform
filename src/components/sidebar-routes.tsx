@@ -1,12 +1,19 @@
 "use client";
 
-import { ROUTES } from "@/config/routes";
-import { SidebarItem } from "./sidebar-item";
+import { guestRoutes, teacherRoutes } from "@/config/routes";
+import { SidebarItem } from "@/components/sidebar-item";
+import { usePathname } from "next/navigation";
 
 export const SidebarRoutes = () => {
+  const pathname = usePathname();
+
+  const isTeacherPage = pathname?.includes("/teacher");
+
+  const routes = isTeacherPage ? teacherRoutes : guestRoutes;
+
   return (
     <nav className="flex flex-col w-full">
-      {ROUTES.map((route) => (
+      {routes.map((route) => (
         <SidebarItem
           key={route.href}
           icon={route.icon}

@@ -1,4 +1,4 @@
-import { Layout, type LucideIcon } from "lucide-react";
+import { BarChart, Compass, Layout, List, type LucideIcon } from "lucide-react";
 
 interface Route {
   icon: LucideIcon;
@@ -6,15 +6,28 @@ interface Route {
   href: string;
 }
 
-export const ROUTES: Route[] = [
+export const guestRoutes: Route[] = [
   {
     icon: Layout,
     label: "Home",
     href: "/"
   },
   {
-    icon: Layout,
+    icon: Compass,
     label: "Browser",
     href: "/search"
+  }
+];
+
+export const teacherRoutes: Route[] = [
+  {
+    icon: List,
+    label: "Courses",
+    href: "/teacher/courses"
+  },
+  {
+    icon: BarChart,
+    label: "Analytics",
+    href: "/teacher/analytics"
   }
 ];
