@@ -25,7 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      afterSignOutUrl={process.env.NEXT_PUBLIC_SIGN_OUT_REDIRECT_URL}
+    >
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
